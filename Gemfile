@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# Additional gemfiles for Heroku
+ruby '2.2.2'
+gem 'rails_12factor', group: :production
+gem 'puma',           group: :production
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -20,7 +25,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+# gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -32,6 +37,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Usual front-end gems
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
@@ -45,10 +52,10 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
+  # better errors
   gem "better_errors"
   gem "binding_of_caller"
-
+  # seeder
   gem "faker"
 
 end
