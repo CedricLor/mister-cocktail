@@ -1,0 +1,15 @@
+<p>Add a dose of something to this cocktail:</p>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :description, collection: 1..10, label: "Dose" %>
+  <%= f.association :ingredient %>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+<p>Or remove a dose of something from this cocktail:</p>
+<%#= simple_form_for [@cocktail, @dose], url: cocktail_dose, method: :delete %>
+<%= simple_form_for [@cocktail, @dose], method: :delete do |f| %>
+  <%= f.error_notification %>
+  <%= f.association :ingredient %>
+  <%= f.submit "Delete", class: "btn btn-primary" %>
+<% end %>
+
