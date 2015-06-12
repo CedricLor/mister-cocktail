@@ -5,11 +5,13 @@
   <%= f.association :ingredient %>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
-<p>Or remove a dose of something from this cocktail:</p>
-<%#= simple_form_for [@cocktail, @dose], url: cocktail_dose, method: :delete %>
-<%= simple_form_for [@cocktail, @dose], method: :delete do |f| %>
-  <%= f.error_notification %>
-  <%= f.association :ingredient %>
-  <%= f.submit "Delete", class: "btn btn-primary" %>
-<% end %>
+
+<%#= simple_form_for [@cocktail, @dose], url: cocktail_dose_path(@cocktail, @dose), method: :delete do | f | %>
+<%#= simple_form_for [@cocktail, @dose], method: :delete do |f| %>
+  <%#= f.error_notification %>
+  <%#= f.association :ingredient %>
+  <%#= f.submit "Delete", class: "btn btn-primary" %>
+<%# end %>
+
+<!-- cocktail_dose_path(@cocktail, dose) -->
 
